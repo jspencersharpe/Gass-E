@@ -2,7 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBox Width="520" Height="20" IsReadOnly="true" x:Name="CoolBox"></TextBox>
+        <StackPanel HorizontalAlignment="Center" Width="520" VerticalAlignment="Center" Height="200" Orientation="Horizontal">
+            <Button x:Name="LeftButton" Margin="0,90,10,80"  Width="107" Click="LeftButton_Click" Content="New Fill Up" RenderTransformOrigin="1.274,0.655"/>
+        </StackPanel>
+    </StackPanel>
 </Window>
