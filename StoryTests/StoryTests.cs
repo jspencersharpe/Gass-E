@@ -16,7 +16,9 @@ namespace UnitTestGassE
         private static Application application;
         private static Button NewFillUp;
         private static Button Reset;
-        private static TextBox text_box;
+        private static TextBox Odo;
+        private static TextBox Cost;
+        private static TextBox Date;
 
         [ClassInitialize]
         public static void Setup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _context)
@@ -29,10 +31,10 @@ namespace UnitTestGassE
             window = application.GetWindow("MainWindow", InitializeOption.NoCache);
             NewFillUp = window.Get<Button>("NewFillUp");
             Reset = window.Get<Button>("Reset");
-            text_box = window.Get<TextBox>("Odometer");
+            Odo = window.Get<TextBox>("Odometer");
+            Cost = window.Get<TextBox>("CostofFillUp");
+            Date = window.Get<TextBox>("Date");
         }
-
-
 
         [TestMethod]
         public void WhenButtonIsClicked()
@@ -44,12 +46,14 @@ namespace UnitTestGassE
 
         void GivenMainWindowIsOpen()
         {
-            Assert.IsTrue(window.IsFocussed);
+            Assert.IsTrue(window.IsCurrentlyActive);
         }
 
-        void TextBoxShouldBeActive() 
+        void TextBoxesShouldBeActive() 
         {
-            Assert.IsFalse(text_box.IsReadOnly);
+            Assert.IsFalse(Odo.IsReadOnly);
+            Assert.IsFalse(Cost.IsReadOnly);
+            Assert.IsFalse(Date.IsReadOnly);
         }
 
         void ResetButtonEnaled() 

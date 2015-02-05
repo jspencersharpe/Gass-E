@@ -3,10 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
-        <StackPanel HorizontalAlignment="Center" Width="520" VerticalAlignment="Center" Height="200" Orientation="Horizontal">
-            <Button x:Name="NewFillUp" Margin="0,90,10,80"  Width="107" Click="NewFillUp_Click" Content="New Fill Up" RenderTransformOrigin="1.274,0.655"/>
-            <TextBox Width="400" Height="20" IsReadOnly="true" x:Name="Odometer"></TextBox>
+        <StackPanel>
+
+            <Button x:Name="NewFillUp"  Width="107" Click="NewFillUp_Click" Content="New Fill Up" />
+            <Label Content="Odometer" HorizontalAlignment="Center" Height="28" x:Name="OdometerLabel" />
+            <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Odometer" Margin="160,0" />
+            <Label Content="CostofFillUp" HorizontalAlignment="Center" x:Name="CostofFillUpLabel"></Label>
+            <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="CostofFillUp" Margin="160,0" />
+            <Label Content="Date" HorizontalAlignment="Center" x:Name="DateLabel"></Label>
+            <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Date"></TextBox>
+
         </StackPanel>
-        <Button x:Name="Reset" Width="100" Height= "20" IsEnabled="False">Reset</Button>
+        <Button x:Name="Reset" Width="100" Height= "20" Content="Reset"/>
     </StackPanel>
 </Window>

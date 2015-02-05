@@ -30,7 +30,7 @@ namespace UnitTestGassE
         public void TestZeroState()
         {
             Button NewFillUp = window.Get<Button>("NewFillUp");
-
+            Button Reset = window.Get<Button>("Reset");
             Assert.IsTrue(NewFillUp.Enabled);
         }
 

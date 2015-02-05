@@ -27,10 +27,7 @@ namespace Gass_E
 
         private void SetAndToggleAccess(string _string) 
         {
-            Odometer.IsReadOnly = false;
-            Odometer.Text = _string;
-            Odometer.IsReadOnly = false;
-        
+            
         }
 
         private void NewFillUp_Click(object sender, RoutedEventArgs e) 
