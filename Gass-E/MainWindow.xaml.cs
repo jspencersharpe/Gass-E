@@ -29,7 +29,7 @@ namespace Gass_E
         {
             Odometer.IsReadOnly = false;
             Odometer.Text = _string;
-            Odometer.IsReadOnly = true;
+            Odometer.IsReadOnly = false;
         
         }
 
