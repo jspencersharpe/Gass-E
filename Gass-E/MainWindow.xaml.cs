@@ -24,5 +24,20 @@ namespace Gass_E
         {
             InitializeComponent();
         }
+
+        private void SetAndToggleAccess(string _string) 
+        {
+            Odometer.IsReadOnly = false;
+            Odometer.Text = _string;
+            Odometer.IsReadOnly = true;
+        
+        }
+
+        private void NewFillUp_Click(object sender, RoutedEventArgs e) 
+        {
+            SetAndToggleAccess("NewFillUp");
+            NewFillUp.IsEnabled = true;
+            
+        }
     }
 }
