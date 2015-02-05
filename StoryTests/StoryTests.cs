@@ -22,14 +22,14 @@ namespace UnitTestGassE
         public static void Setup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _context)
         {
             var applicationDir = _context.DeploymentDirectory;
-            var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\UnitTestGassE\\bin\\Debug\\GassE");
+            var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\StoryTests\\bin\\Debug\\Gass-E");
             application = Application.Launch(applicationPath);
 
 
             window = application.GetWindow("MainWindow", InitializeOption.NoCache);
             NewFillUp = window.Get<Button>("NewFillUp");
             Reset = window.Get<Button>("Reset");
-            text_box = window.Get<TextBox>("Reset");
+            text_box = window.Get<TextBox>("Odometer");
         }
 
 
@@ -42,9 +42,9 @@ namespace UnitTestGassE
             System.Threading.Thread.Sleep(500);
         }
 
-        void GivenmainWindowIsOpen()
+        void GivenMainWindowIsOpen()
         {
-            Assert.IsTrue(window.IsFocussed);
+            Assert.False(window.IsFocussed);
         }
 
         void TextBoxShouldBeActive() 
@@ -64,7 +64,7 @@ namespace UnitTestGassE
         }
 
         [ClassCleanup]
-        public void TearDown() 
+        public static void TearDown() 
         {
             window.Close();
             application.Close();

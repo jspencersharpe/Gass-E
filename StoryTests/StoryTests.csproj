@@ -59,13 +59,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="StoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gass-E\Gass-E.csproj">
       <Project>{de7cb377-bff5-4ca2-a681-bd64589471ba}</Project>
       <Name>Gass-E</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTestGassE\UnitTestGassE.csproj">
+      <Project>{1eedad93-2550-4921-9197-171a771c7cbc}</Project>
+      <Name>UnitTestGassE</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
