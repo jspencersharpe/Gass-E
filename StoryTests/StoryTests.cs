@@ -44,7 +44,7 @@ namespace UnitTestGassE
 
         void GivenMainWindowIsOpen()
         {
-            Assert.False(window.IsFocussed);
+            Assert.IsTrue(window.IsFocussed);
         }
 
         void TextBoxShouldBeActive() 
