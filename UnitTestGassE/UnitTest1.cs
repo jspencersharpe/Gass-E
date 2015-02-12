@@ -5,6 +5,7 @@ using TestStack.White.Factory;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Gass_E.Model;
 
 namespace UnitTestGassE
 {
@@ -40,5 +41,6 @@ namespace UnitTestGassE
             window.Close();
             application.Close();
         }
+
     }
 }
