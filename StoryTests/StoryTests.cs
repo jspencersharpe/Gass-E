@@ -16,6 +16,7 @@ namespace UnitTestGassE
         private static Application application;
         private static Button NewFillUp;
         private static Button Reset;
+        private static Button Submit;
         private static TextBox Odo;
         private static TextBox Cost;
         private static TextBox Date;
@@ -31,6 +32,7 @@ namespace UnitTestGassE
             window = application.GetWindow("MainWindow", InitializeOption.NoCache);
             NewFillUp = window.Get<Button>("NewFillUp");
             Reset = window.Get<Button>("Reset");
+            Submit = window.Get<Button>("Submit");
             Odo = window.Get<TextBox>("Odometer");
             Cost = window.Get<TextBox>("CostofFillUp");
             Date = window.Get<TextBox>("Date");
@@ -59,6 +61,12 @@ namespace UnitTestGassE
         void ResetButtonEnaled() 
         {
             Assert.IsTrue(Reset.Enabled);
+            Assert.IsTrue(Submit.Enabled);
+        }
+
+        void ResetButtonClear() 
+        {
+            //Assert.AreEqual(Reset.Click() == Odo.);
         }
 
         [TestMethod]

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestGassE", "UnitTestGa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoryTests", "StoryTests\StoryTests.csproj", "{7B345DDB-71CC-4F53-B076-33967652ECC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTestModel", "EventTestModel\EventTestModel.csproj", "{0E0BCDBF-1127-4256-93DE-DB2F8F7763A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7B345DDB-71CC-4F53-B076-33967652ECC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B345DDB-71CC-4F53-B076-33967652ECC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B345DDB-71CC-4F53-B076-33967652ECC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E0BCDBF-1127-4256-93DE-DB2F8F7763A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0BCDBF-1127-4256-93DE-DB2F8F7763A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0BCDBF-1127-4256-93DE-DB2F8F7763A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E0BCDBF-1127-4256-93DE-DB2F8F7763A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

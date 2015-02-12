@@ -4,16 +4,21 @@
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
         <StackPanel>
+            <StackPanel>
+                <Button x:Name="NewFillUp"  Width="107" Click="NewFillUp_Click" Content="New Fill Up" />
+                <Label Content="Odometer" HorizontalAlignment="Center" Height="28" x:Name="OdometerLabel" />
+                <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Odometer" Margin="160,0" />
+                <Label Content="Cost of Fill Up" HorizontalAlignment="Center" x:Name="CostofFillUpLabel"></Label>
+                <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="CostofFillUp" Margin="160,0" />
+                <Label Content="Date" HorizontalAlignment="Center" x:Name="DateLabel"></Label>
+                <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Date"></TextBox>
+                <Button Name="Submit" Width="100" Height="20" Content="Submit" Margin="10"></Button>
 
-            <Button x:Name="NewFillUp"  Width="107" Click="NewFillUp_Click" Content="New Fill Up" />
-            <Label Content="Odometer" HorizontalAlignment="Center" Height="28" x:Name="OdometerLabel" />
-            <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Odometer" Margin="160,0" />
-            <Label Content="Cost of Fill Up" HorizontalAlignment="Center" x:Name="CostofFillUpLabel"></Label>
-            <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="CostofFillUp" Margin="160,0" />
-            <Label Content="Date" HorizontalAlignment="Center" x:Name="DateLabel"></Label>
-            <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Date"></TextBox>
-
+            </StackPanel>
+            <Button x:Name="Reset" Width="100" Height= "20" Content="Reset"/>
         </StackPanel>
-        <Button x:Name="Reset" Width="100" Height= "20" Content="Reset"/>
+        <ListBox Height="60" Width="300" Name="FillUpList" ItemsSource="{Binding}"></ListBox>
     </StackPanel>
+
+
 </Window>
