@@ -34,6 +34,7 @@ namespace UnitTestGassE
             Button Submit = window.Get<Button>("Submit");
             Assert.IsTrue(NewFillUp.Enabled);
             Assert.IsTrue(Reset.Enabled);
+            Assert.IsTrue(Submit.Enabled);
         }
 
         [TestCleanup]

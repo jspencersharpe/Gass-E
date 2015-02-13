@@ -14,7 +14,6 @@ namespace Gass_E
         {
             InitializeComponent();
             NewFillUp.DataContext = repo.Context().Events.Local;
-
         }
 
         private void NewFillUp_Click(object sender, RoutedEventArgs e) 

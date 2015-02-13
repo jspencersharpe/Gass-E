@@ -28,7 +28,7 @@ namespace UnitTestGassE
         }
 
         [TestCleanup]
-        public static void ClearDatabase() 
+        public void ClearDatabase() 
         {
             repo.Clear();
         }
