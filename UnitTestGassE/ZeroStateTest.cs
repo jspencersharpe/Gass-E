@@ -31,6 +31,7 @@ namespace UnitTestGassE
         {
             Button NewFillUp = window.Get<Button>("NewFillUp");
             Button Reset = window.Get<Button>("Reset");
+            Button Submit = window.Get<Button>("Submit");
             Assert.IsTrue(NewFillUp.Enabled);
             Assert.IsTrue(Reset.Enabled);
         }

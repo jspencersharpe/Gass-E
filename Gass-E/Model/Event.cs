@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gass_E.Model
 {
-    public class Event : INotifyPropertyChanged
+    public class Event
     {
         public int EventId { get; set; }
         public string Odometer { get; set; }
@@ -21,8 +21,6 @@ namespace Gass_E.Model
             this.CostofFillUp = EventCostofFillUp;
             this.Date = EventDate;
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
         
     }
 

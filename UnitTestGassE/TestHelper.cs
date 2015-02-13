@@ -27,7 +27,7 @@ namespace UnitTestGassE
         public static void SetupClass(TestContext _context)
         {
             var applicationDir = _context.DeploymentDirectory;
-            var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\TestWaitForIt\\bin\\Debug\\GassE");
+            var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\UnitTestGassE\\bin\\Debug\\GassE");
 
         }
 

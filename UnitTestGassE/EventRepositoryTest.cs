@@ -6,7 +6,6 @@ using Gass_E;
 using Gass_E.Model;
 using Gass_E.Repository;
 
-
 namespace UnitTestGassE
 {
     [TestClass]
@@ -36,7 +35,7 @@ namespace UnitTestGassE
 
         [TestMethod]
         public void TestAddToDataBase() 
-        {
+         {
             Assert.AreEqual(0, repo.GetCount());
             repo.Add(new Event("200,000", "$50.00", "10/1/2015"));
             Assert.AreEqual(1, repo.GetCount());
