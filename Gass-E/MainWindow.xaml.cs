@@ -13,7 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
+using Gass_E.Repository;
 using Gass_E.Model;
+using Gass_E;
 
 namespace Gass_E
 {
@@ -22,25 +25,17 @@ namespace Gass_E
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<Event> Events;
-
+        public static EventRepository repo = new EventRepository();
         public MainWindow()
         {
-            Events = new ObservableCollection<Event>();
-            Events.Add(new Event("200,000", "$50.00", "4/1/2015"));
             InitializeComponent();
-            FillUpList.DataContext = Events;
+            NewFillUp.DataContext = repo.Context().Events.Local;
+
         }
 
-        private void SetAndToggleAccess(string _string) 
+        private void Button_Click(object sender, RoutedEventArgs e) 
         {
-            
-        }
-
-        private void NewFillUp_Click(object sender, RoutedEventArgs e) 
-        {
-            SetAndToggleAccess("NewFillUp");
-            NewFillUp.IsEnabled = true;
+            repo.Add(new Event("100,000", "$50.00", "4/1/2015"));
         }
     }
 }

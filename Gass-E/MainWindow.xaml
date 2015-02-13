@@ -17,7 +17,14 @@
             </StackPanel>
             <Button x:Name="Reset" Width="100" Height= "20" Content="Reset"/>
         </StackPanel>
-        <ListBox Height="60" Width="300" Name="FillUpList" ItemsSource="{Binding}"></ListBox>
+        <ListBox Height="60" Width="300" Name="FillUpList" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBox Text="{Binding Name}"></TextBox>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
+        </ListBox>
     </StackPanel>
 
 

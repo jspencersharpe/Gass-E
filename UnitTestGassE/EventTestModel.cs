@@ -7,6 +7,13 @@ namespace UnitTestGassE
     [TestClass]
     public class EventTestModel
     {
+        //[TestMethod]
+        //public void CreatingAnEventStoresItInEvents()
+        //{
+        //    Event newFillUp = new Event("200,000", "$50.00", "4/1/2015");
+        //    CollectionAssert.Contains(Event.Events, newFillUp);
+        //}
+
         [TestMethod]
         public void CreateEventAndStoreProperties()
         {
