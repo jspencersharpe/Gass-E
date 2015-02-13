@@ -2,9 +2,9 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Gass_E.Repository;
 using Gass_E;
 using Gass_E.Model;
+using Gass_E.Repository;
 
 
 namespace UnitTestGassE
@@ -65,6 +65,17 @@ namespace UnitTestGassE
             repo.Add(new Event("100,000", "$30.00", "4/1/2015"));
             repo.Clear();
             Assert.AreEqual(0, repo.GetCount());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void EventsAreUnique() 
+        {
+            Event e = new Event("100,000", "$30.00", "4/1/2015");
+            repo.Clear();
+            repo.Add(e);
+            repo.Add(e);
+            
         }
     }
 }

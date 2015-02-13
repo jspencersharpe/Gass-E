@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Gass_E;
 using System.Data.Entity;
+using Gass_E.Model;
+using System.Linq.Expressions;
 
 namespace Gass_E.Repository
 {
-    class EventRepository : IEventRepository
+    public class EventRepository : IEventRepository
     {
         private EventContext _dbContext;
 

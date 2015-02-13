@@ -33,7 +33,7 @@ namespace Gass_E
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) 
+        private void NewFillUp_Click(object sender, RoutedEventArgs e) 
         {
             repo.Add(new Event("100,000", "$50.00", "4/1/2015"));
         }

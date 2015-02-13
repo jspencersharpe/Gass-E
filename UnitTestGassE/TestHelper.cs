@@ -7,33 +7,35 @@ using System.Reflection;
 using TestStack.White.Factory;
 using TestStack.White.UIItems.ListBoxItems;
 using TestStack.White.UIItems.Finders;
+using TestStack.White.UIItems;
 using Gass_E.Repository;
 using Gass_E.Model;
 using Gass_E;
+using System.Windows.Automation;
 
 namespace UnitTestGassE
 {
     public class TestHelper
     {
         private static TestContext test_context;
-        private static Window window;
+        protected static Window window;
         private static Application application;
-        private static EventRepositoryTest repo = new EventRepository();
+        private static EventRepository repo = new EventRepository();
         private static EventContext context;
+        private static String applicationPath;
 
-        public static void Setup(TestContext _context)
+        public static void SetupClass(TestContext _context)
         {
-            test_context = _context;
             var applicationDir = _context.DeploymentDirectory;
             var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\TestWaitForIt\\bin\\Debug\\GassE");
+
+        }
+
+        public static void TestPrep() 
+        {
             application = Application.Launch(applicationPath);
             window = application.GetWindow("MainWindow", InitializeOption.NoCache);
             context = repo.Context();
-        }
-
-        public void AndIShouldSeeAnErrorMessage()
-        {
-            throw new NotImplementedException();
         }
 
         public void AndIShouldSeeAnErrorMessage(string p)
@@ -43,25 +45,25 @@ namespace UnitTestGassE
 
         public void AndIShouldSeeTheHelperText()
         {
-            throw new NotImplementedException();
+            var text = window.Get(SearchCriteria.ByAutomationId("GettingStartedText"));
+            Assert.IsTrue(text.Visible);
         }
 
-        public void AndIShouldSeeXEvents(int expected)
+        public void AndIShouldSeeXEvents(int x)
         {
-            Assert.IsNotNull(window);
-            SearchCriteria searchCriteria = SearchCriteria.ByAutomationId("CostofFillUp").AndIndex(0);
-            ListBox list_box = (ListBox)window.Get(searchCriteria);
-            Assert.AreEqual(expected, list_box.Items.Count);
+            ThenIShouldSeeXEvents(x);
         }
 
-        public void AndTheButtonShouldBeEnabled()
+        public void AndTheButtonShouldBeEnabled(string buttonContent)
         {
-            throw new NotImplementedException();
+            Button button = window.Get<Button>(SearchCriteria.ByText(buttonContent));
+            Assert.IsTrue(button.Enabled);
         }
 
-        public void AndTheButtonShouldBeDisabled()
+        public void AndTheButtonShouldBeDisabled(string buttonContent)
         {
-            throw new NotImplementedException();
+            Button button = window.Get<Button>(SearchCriteria.ByText(buttonContent));
+            Assert.IsFalse(button.Enabled);
         }
 
         public void AndIShouldSeeAListFor(string p1, string p2, string p3)
@@ -84,14 +86,10 @@ namespace UnitTestGassE
             Assert.AreEqual(p1, item.Text);
         }
 
-        public void AndTheButtonShouldBeEnabled(string p)
-        {
-            throw new NotImplementedException();
-        }
-
         public void AndIShouldNotSeeTheHelperText()
         {
-            throw new NotImplementedException();
+            var text = window.Get(SearchCriteria.ByAutomationId("GettingStartedText"));
+            Assert.IsFalse(text.Visible);
         }
 
         public void GivenThereAreNoEvents() 
@@ -109,14 +107,14 @@ namespace UnitTestGassE
                 repo.Add(evnt);
             }
 
-            Assert.AreEqual(2*events.Length, repo.GetCount());
+            Assert.AreEqual(events.Length, repo.GetCount());
         }
 
         public static void CleanThisUp()
         {
             window.Close();
-            repo.Clear();
             application.Close();
+            repo.Clear();
         }
     }
 

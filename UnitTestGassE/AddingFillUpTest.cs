@@ -1,16 +1,30 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TestStack.BDDfy;
+using Gass_E.Model;
 
 namespace UnitTestGassE
 {
     [TestClass]
     public class AddingFillUpTest : TestHelper
     {
-        [TestMethod]
-        public void ScenarioHappyPathEventCreation()
+        [ClassInitialize]
+        public static void SetUpTests(TestContext _context) 
         {
-
+            TestHelper.SetupClass(_context);
         }
+
+        [TestInitialize]
+        public void SetupTests() 
+        {
+            TestHelper.TestPrep();
+        }
+
+        [ClassCleanup]
+        public void CleanUp() 
+        {
+            TestHelper.CleanThisUp();
+        }
+
+
     }
 }
