@@ -49,6 +49,14 @@ namespace UnitTestGassE
             Assert.IsTrue(text.Visible);
         }
 
+        public void ThenIShouldSeeXEvents(int expected) 
+        {
+            Assert.IsNotNull(window);
+            SearchCriteria searchCriteria = SearchCriteria.ByAutomationId("FillUpList").AndIndex(0);
+            ListBox list_box = (ListBox)window.Get(searchCriteria);
+            Assert.AreEqual(expected, list_box.Items.Count);
+        }
+
         public void AndIShouldSeeXEvents(int x)
         {
             ThenIShouldSeeXEvents(x);
@@ -66,42 +74,83 @@ namespace UnitTestGassE
             Assert.IsFalse(button.Enabled);
         }
 
-        public void AndIShouldSeeAListFor(string p1, string p2, string p3)
+        public void AndIShouldSeeAListFor(int p1, int p2, string p3)
         {
-            throw new NotImplementedException();
-        }
-
-        public void ThenIShouldSeeXEvents(int p)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AndIShouldSeeAListFor(string p1, string p2)
-        {
-            var e = repo.GetByDate(p2);
+            var e = repo.GetByDate(p3);
             Assert.IsNotNull(window);
             SearchCriteria searchCriteria = SearchCriteria.ByAutomationId("CostofFillUp").AndIndex(0);
             ListBox list_box = (ListBox)window.Get(searchCriteria);
-            var item = list_box.Items.Find(i => i.Text == p1);
+            var item = list_box.Items.Find(i => Convert.ToInt32(i.Text) == p1);
             Assert.AreEqual(p1, item.Text);
         }
 
-        public void AndIShouldNotSeeTheHelperText()
+        public void ThenIShouldNotSeeTheEventForm() 
+        {
+            Button button = window.Get<Button>(SearchCriteria.ByAutomationId("New Fill Up"));
+            Assert.IsFalse(button.Visible);
+        }
+
+        public void AndIClick(string buttonContent) 
+        {
+            WhenIClick(buttonContent);
+        }
+
+        public void WhenIFillInOdometerWith(int odo)
+        {
+            var textBox = window.Get<TextBox>("Odometer");
+            textBox.SetValue(odo);
+        }
+
+        public void WhenIEnterCostOfFillUp(int cost) 
+        {
+            var textBox = window.Get<TextBox>("CostOfFillUp");
+            textBox.SetValue(cost);
+        }
+
+        public void AndIChooseTheEventDate(DateTime newDate) 
+        {
+            DateTimePicker picker = window.Get<DateTimePicker>(SearchCriteria.ByAutomationId("Date"));
+            picker.SetValue(newDate);
+        }
+
+        public void AndTheEventDateShouldBeToday() 
+        {
+            DateTimePicker picker = window.Get<DateTimePicker>(SearchCriteria.ByAutomationId("Date"));
+            DateTime? actual = picker.Date;
+            DateTime expected = DateTime.Today;
+            Assert.AreEqual(expected, actual);
+        }
+
+        public void AndIShouldNotSeeTheHelperText() 
         {
             var text = window.Get(SearchCriteria.ByAutomationId("GettingStartedText"));
             Assert.IsFalse(text.Visible);
         }
 
-        public void GivenThereAreNoEvents() 
+        public void ThenIShouldSeeTheEventForm() 
+        {
+            Button button = window.Get<Button>(SearchCriteria.ByAutomationId("Submit"));
+            Assert.IsTrue(button.Visible);
+        }
+
+        public void WhenIClick(string buttonContent) 
+        {
+            Button button = window.Get<Button>(SearchCriteria.ByText(buttonContent));
+            button.Click();
+        }
+
+        public void ThenIShouldSeeAFillUpFor(string p1, string p2, string p3) 
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GivenThereAreNoEvents()
         {
             Assert.AreEqual(0, repo.GetCount());
         }
 
-        public static void GivenTheseEvents(params Event[] events)
+        public void GivenTheseEvents(params Event[] events) 
         {
-            repo.Add(events[0]);
-            repo.Add(events[1]);
-
             foreach (Event evnt in events) 
             {
                 repo.Add(evnt);

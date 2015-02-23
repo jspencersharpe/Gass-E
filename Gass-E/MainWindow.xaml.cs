@@ -10,10 +10,12 @@ namespace Gass_E
     public partial class MainWindow : Window
     {
         public static EventRepository repo = new EventRepository();
+
         public MainWindow()
         {
             InitializeComponent();
             NewFillUp.DataContext = repo.Context().Events.Local;
+            //NewFillUp.DataContext = repo.Context();
         }
 
         private void NewFillUp_Click(object sender, RoutedEventArgs e) 

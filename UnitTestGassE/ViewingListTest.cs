@@ -34,8 +34,8 @@ namespace UnitTestGassE
         {
             
             ThenIShouldSeeXEvents(2);
-            AndIShouldSeeAListFor("200,000", "$50.00", "4/1/15");
-            AndIShouldSeeAListFor("100,000", "$40.00", "2/15/15");
+            AndIShouldSeeAListFor(200000, 50, "4/1/15");
+            AndIShouldSeeAListFor(100000, 40, "2/15/15");
             AndIShouldNotSeeTheHelperText();
         }
 

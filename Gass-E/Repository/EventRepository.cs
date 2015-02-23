@@ -18,7 +18,6 @@ namespace Gass_E.Repository
         {
             _dbContext = new EventContext();
             //_dbContext.Events.Load();
-            
         }
 
         public EventContext Context() 
