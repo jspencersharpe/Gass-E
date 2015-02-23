@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using Gass_E.Repository;
 using Gass_E.Model;
+using System;
+using System.Data.Entity;
 
 namespace Gass_E
 {
@@ -14,13 +16,21 @@ namespace Gass_E
         public MainWindow()
         {
             InitializeComponent();
-            NewFillUp.DataContext = repo.Context().Events.Local;
+            //NewFillUp.DataContext = repo.Context().Events.Local;
             //NewFillUp.DataContext = repo.Context();
+            FillUpList.DataContext = repo.GetCount();
         }
 
         private void NewFillUp_Click(object sender, RoutedEventArgs e) 
         {
-            repo.Add(new Event("100,000", "$50.00", "4/1/2015"));
+            repo = new EventRepository();
+            int odometer = Convert.ToInt32(Odometer.Text);
+            int cost = Convert.ToInt32(CostofFillUp.Text);
+            string date = Date.Text;
+            repo.Add(new Event(odometer, cost, date));
+            Odometer.Text = "";
+            CostofFillUp.Text = "";
+            Date.Text = "";
         }
     }
 }

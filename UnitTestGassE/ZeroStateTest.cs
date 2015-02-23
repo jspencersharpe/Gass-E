@@ -26,6 +26,12 @@ namespace UnitTestGassE
             TestHelper.TestPrep();
         }
 
+        [TestCleanup]
+        public void CleanUp()
+        {
+            TestHelper.CleanThisUp();
+        }
+
         [TestMethod]
         public void TestZeroStateButton()
         {
@@ -37,11 +43,13 @@ namespace UnitTestGassE
             Assert.IsTrue(Submit.Enabled);
         }
 
-        [TestCleanup]
-        public void CleanUp() 
+        [TestMethod]
+        public void TestZeroStateHelpElements()
         {
-            TestHelper.CleanThisUp();
+            var text = window.Get(SearchCriteria.ByAutomationId("GettingStartedText"));
+            Assert.IsTrue(text.Visible);
         }
+        
 
     }
 }

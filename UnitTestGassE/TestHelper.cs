@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestStack.White.UIItems.WindowItems;
 using TestStack.White;
 using System.IO;
-using System.Reflection;
 using TestStack.White.Factory;
 using TestStack.White.UIItems.ListBoxItems;
 using TestStack.White.UIItems.Finders;
@@ -11,7 +10,6 @@ using TestStack.White.UIItems;
 using Gass_E.Repository;
 using Gass_E.Model;
 using Gass_E;
-using System.Windows.Automation;
 
 namespace UnitTestGassE
 {
@@ -27,8 +25,7 @@ namespace UnitTestGassE
         public static void SetupClass(TestContext _context)
         {
             var applicationDir = _context.DeploymentDirectory;
-            var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\UnitTestGassE\\bin\\Debug\\GassE");
-
+            var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\UnitTestGassE\\bin\\Debug\\Gass-E");
         }
 
         public static void TestPrep() 
