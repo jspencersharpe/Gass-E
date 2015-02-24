@@ -10,7 +10,6 @@ namespace GassE.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Gass_E.EventContext";
         }
 
         protected override void Seed(GassE.EventContext context)

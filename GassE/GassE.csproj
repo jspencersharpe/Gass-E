@@ -70,9 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\201502131725155_InitialCreate.cs" />
-    <Compile Include="Migrations\201502131725155_InitialCreate.Designer.cs">
-      <DependentUpon>201502131725155_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201502242113482_AddHashField.cs" />
+    <Compile Include="Migrations\201502242113482_AddHashField.Designer.cs">
+      <DependentUpon>201502242113482_AddHashField.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\EventRepository.cs" />
@@ -106,8 +106,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201502131725155_InitialCreate.resx">
-      <DependentUpon>201502131725155_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201502242113482_AddHashField.resx">
+      <DependentUpon>201502242113482_AddHashField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
