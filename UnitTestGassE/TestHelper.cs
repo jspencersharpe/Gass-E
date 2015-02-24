@@ -138,7 +138,7 @@ namespace UnitTestGassE
 
         public void WhenIClick(string buttonContent) 
         {
-            Button button = window.Get<Button>(SearchCriteria.ByText(buttonContent));
+            Button button = window.Get<Button>(SearchCriteria.ByAutomationId(buttonContent));
             button.Click();
         }
 

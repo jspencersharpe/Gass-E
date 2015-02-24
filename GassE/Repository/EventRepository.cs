@@ -37,16 +37,16 @@ namespace GassE.Repository
 
         public void Add(Model.Event E) 
         {
-            //var query = from Event in _dbContext.Events
-            //            where Event.Odometer == E.Odometer &&
-            //            Event.CostofFillUp == E.CostofFillUp &&
-            //            Event.Date == E.Date
-            //            select Event;
+            var query = from Event in _dbContext.Events
+                        where Event.Odometer == E.Odometer &&
+                        Event.CostofFillUp == E.CostofFillUp &&
+                        Event.Date == E.Date
+                        select Event;
 
-            //if (query.ToList().Count > 0) 
-            //{
-            //    throw new ArgumentException();
-            //}
+            if (query.ToList().Count > 0)
+            {
+                throw new ArgumentException();
+            }
 
             _dbContext.Events.Add(E);
             _dbContext.SaveChanges();

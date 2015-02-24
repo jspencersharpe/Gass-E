@@ -19,7 +19,7 @@ namespace UnitTestGassE
             TestHelper.TestPrep();
         }
 
-        [ClassCleanup]
+        [TestCleanup]
         public void CleanUp() 
         {
             TestHelper.CleanThisUp();
