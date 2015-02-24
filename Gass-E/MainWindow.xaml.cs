@@ -25,10 +25,12 @@ namespace Gass_E
         {
             repo = new EventRepository();
             int odometer = Convert.ToInt32(Odometer.Text);
+            int gall = Convert.ToInt32(Gallons.Text);
             int cost = Convert.ToInt32(CostofFillUp.Text);
             string date = Date.Text;
-            repo.Add(new Event(odometer, cost, date));
+            repo.Add(new Event(odometer, gall, cost, date));
             Odometer.Text = "";
+            Gallons.Text = "";
             CostofFillUp.Text = "";
             Date.Text = "";
         }

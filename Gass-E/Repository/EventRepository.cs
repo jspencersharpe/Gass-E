@@ -97,6 +97,14 @@ namespace Gass_E.Repository
             return query.First<Model.Event>();
         }
 
+        public Model.Event GetByGallons(int gall) 
+        {
+            var query = from Event in _dbContext.Events
+                        where Event.Gallons == gall
+                        select Event;
+            return query.First<Model.Event>();
+        }
+
         public Model.Event GetByCostOfFillUp(int cost) 
         {
             var query = from Event in _dbContext.Events

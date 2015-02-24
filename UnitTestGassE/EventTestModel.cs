@@ -17,8 +17,9 @@ namespace UnitTestGassE
         [TestMethod]
         public void CreateEventAndStoreProperties()
         {
-            Event newFillUp = new Event(200000, 50, "10/1/2015");
+            Event newFillUp = new Event(200000, 10, 50, "10/1/2015");
             Assert.AreEqual(200000, newFillUp.Odometer);
+            Assert.AreEqual(10, newFillUp.Gallons);
             Assert.AreEqual(50, newFillUp.CostofFillUp);
             Assert.AreEqual("10/1/2015", newFillUp.Date);
         }

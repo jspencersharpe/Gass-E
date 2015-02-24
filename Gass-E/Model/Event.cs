@@ -12,6 +12,7 @@ namespace Gass_E.Model
     {
         public int EventId { get; set; }
         public int Odometer { get; set; }
+        public int Gallons { get; set; }
         public int CostofFillUp { get; set; }
         public string Date { get; set; }
 
@@ -20,9 +21,10 @@ namespace Gass_E.Model
             //placeholder
         }
 
-        public Event(int EventOdometer, int EventCostofFillUp, string EventDate) 
+        public Event(int EventOdometer, int EventGallons, int EventCostofFillUp, string EventDate) 
         {
             this.Odometer = EventOdometer;
+            this.Gallons = EventGallons;
             this.CostofFillUp = EventCostofFillUp;
             this.Date = EventDate;
         }

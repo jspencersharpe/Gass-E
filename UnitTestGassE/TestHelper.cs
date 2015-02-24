@@ -71,9 +71,9 @@ namespace UnitTestGassE
             Assert.IsFalse(button.Enabled);
         }
 
-        public void AndIShouldSeeAListFor(int p1, int p2, string p3)
+        public void AndIShouldSeeAListFor(int p1, int p2, int p3, string p4)
         {
-            var e = repo.GetByDate(p3);
+            var e = repo.GetByDate(p4);
             Assert.IsNotNull(window);
             SearchCriteria searchCriteria = SearchCriteria.ByAutomationId("CostofFillUp").AndIndex(0);
             ListBox list_box = (ListBox)window.Get(searchCriteria);
@@ -96,6 +96,12 @@ namespace UnitTestGassE
         {
             var textBox = window.Get<TextBox>("Odometer");
             textBox.SetValue(odo);
+        }
+
+        public void WhenIEnterGallons(int gall) 
+        {
+            var textBox = window.Get<TextBox>("Gallons");
+            textBox.SetValue(gall);
         }
 
         public void WhenIEnterCostOfFillUp(int cost) 
@@ -136,7 +142,7 @@ namespace UnitTestGassE
             button.Click();
         }
 
-        public void ThenIShouldSeeAFillUpFor(string p1, string p2, string p3) 
+        public void ThenIShouldSeeAFillUpFor(int p1, int p2, int p3, string p4) 
         {
             throw new NotImplementedException();
         }

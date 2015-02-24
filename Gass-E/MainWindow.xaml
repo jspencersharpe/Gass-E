@@ -8,6 +8,8 @@
                 <Button x:Name="NewFillUp"  Width="107" Click="NewFillUp_Click" Content="New Fill Up" />
                 <Label Content="Odometer" HorizontalAlignment="Center" Height="28" x:Name="OdometerLabel" />
                 <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Odometer" Margin="160,0" />
+                <Label Content="Gallons" HorizontalAlignment="Center" x:Name="GallonsLabel"></Label>
+                <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Gallons" Margin="160,0"></TextBox>
                 <Label Content="Cost of Fill Up" HorizontalAlignment="Center" x:Name="CostofFillUpLabel"></Label>
                 <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="CostofFillUp" Margin="160,0" />
                 <Label Content="Date" HorizontalAlignment="Center" x:Name="DateLabel"></Label>

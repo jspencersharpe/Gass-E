@@ -18,6 +18,7 @@ namespace UnitTestGassE
         private static Button Reset;
         private static Button Submit;
         private static TextBox Odo;
+        private static TextBox Gall;
         private static TextBox Cost;
         private static TextBox Date;
 
@@ -34,6 +35,7 @@ namespace UnitTestGassE
             Reset = window.Get<Button>("Reset");
             Submit = window.Get<Button>("Submit");
             Odo = window.Get<TextBox>("Odometer");
+            Gall = window.Get<TextBox>("Gallons");
             Cost = window.Get<TextBox>("CostofFillUp");
             Date = window.Get<TextBox>("Date");
         }
@@ -54,6 +56,7 @@ namespace UnitTestGassE
         void TextBoxesShouldBeActive()
         {
             Assert.IsFalse(Odo.IsReadOnly);
+            Assert.IsFalse(Gall.IsReadOnly);
             Assert.IsFalse(Cost.IsReadOnly);
             Assert.IsFalse(Date.IsReadOnly);
         }

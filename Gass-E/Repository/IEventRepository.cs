@@ -19,6 +19,7 @@ namespace Gass_E.Repository
         IEnumerable<Event> All();
         Event GetById(int id);
         Event GetByOdometer(int odo);
+        Event GetByGallons(int odo);
         Event GetByCostOfFillUp(int cost);
         Event GetByDate(string date);
         IQueryable<Event> SearchFor(Expression<Func<Event, bool>> predicate);

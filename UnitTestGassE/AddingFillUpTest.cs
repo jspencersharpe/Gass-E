@@ -35,12 +35,13 @@ namespace UnitTestGassE
             AndTheEventDateShouldBeToday();
             AndTheButtonShouldBeDisabled("NewFillUp");
             WhenIFillInOdometerWith(200000);
+            WhenIEnterGallons(10);
             WhenIEnterCostOfFillUp(50);
             AndIChooseTheEventDate(new DateTime(2015, 10, 01));
             AndIClick("Submit");
             ThenIShouldNotSeeTheEventForm();
             AndIShouldSeeXEvents(1);
-            AndIShouldSeeAListFor(200000, 50, "10/1/2015");
+            AndIShouldSeeAListFor(200000, 10, 50, "10/1/2015");
             AndIShouldNotSeeTheHelperText();
             AndTheButtonShouldBeEnabled("Submit");
         }
@@ -54,12 +55,13 @@ namespace UnitTestGassE
             ThenIShouldSeeTheEventForm();
             AndIShouldSeeAnErrorMessage("All parameters must be filled in");
             WhenIFillInOdometerWith(200000);
+            WhenIEnterGallons(10);
             WhenIEnterCostOfFillUp(50);
             AndIChooseTheEventDate(new DateTime(2015, 10, 01));
             AndIClick("Submit");
             ThenIShouldSeeTheEventForm();
             AndIShouldSeeXEvents(1);
-            AndIShouldSeeAListFor(200000, 50, "10/01/2015");
+            AndIShouldSeeAListFor(200000, 10, 50, "10/01/2015");
         }
 
         [TestMethod]
@@ -68,6 +70,7 @@ namespace UnitTestGassE
             GivenThereAreNoEvents();
             WhenIClick("NewFillUp");
             WhenIFillInOdometerWith(200000);
+            WhenIEnterGallons(10);
             AndIChooseTheEventDate(new DateTime(2015, 10, 01));
             AndIClick("Reset");
             AndIShouldSeeXEvents(0);
