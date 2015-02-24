@@ -4,9 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Gass_E.Model;
+using GassE.Model;
 
-namespace Gass_E.Repository
+namespace GassE.Repository
 {
     public interface IEventRepository
     {

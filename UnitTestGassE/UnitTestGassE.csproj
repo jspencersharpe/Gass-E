@@ -90,9 +90,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gass-E\Gass-E.csproj">
+    <ProjectReference Include="..\GassE\GassE.csproj">
       <Project>{de7cb377-bff5-4ca2-a681-bd64589471ba}</Project>
-      <Name>Gass-E</Name>
+      <Name>GassE</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

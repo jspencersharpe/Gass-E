@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gass_E.Model 
+namespace GassE.Model 
 {
     public class Event : INotifyPropertyChanged
     {

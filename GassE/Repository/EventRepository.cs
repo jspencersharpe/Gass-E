@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Gass_E;
+using GassE;
 using System.Data.Entity;
-using Gass_E.Model;
+using GassE.Model;
 using System.Linq.Expressions;
 
-namespace Gass_E.Repository
+namespace GassE.Repository
 {
     public class EventRepository : IEventRepository
     {

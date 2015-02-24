@@ -1,11 +1,11 @@
-namespace Gass_E.Migrations
+namespace GassE.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Gass_E.EventContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<GassE.EventContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Gass_E.Migrations
             ContextKey = "Gass_E.EventContext";
         }
 
-        protected override void Seed(Gass_E.EventContext context)
+        protected override void Seed(GassE.EventContext context)
         {
             //  This method will be called after migrating to the latest version.
 

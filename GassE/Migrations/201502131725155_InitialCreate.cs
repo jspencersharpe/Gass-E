@@ -1,4 +1,4 @@
-namespace Gass_E.Migrations
+namespace GassE.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

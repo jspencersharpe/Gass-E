@@ -2,9 +2,9 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Gass_E;
-using Gass_E.Model;
-using Gass_E.Repository;
+using GassE;
+using GassE.Model;
+using GassE.Repository;
 
 namespace UnitTestGassE
 {

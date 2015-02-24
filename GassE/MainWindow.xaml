@@ -1,10 +1,13 @@
-﻿<Window x:Class="Gass_E.MainWindow"
+﻿<Window x:Class="GassE.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
         <StackPanel>
             <StackPanel>
+                <Label HorizontalAlignment="Left" Margin="306,209,0,0" VerticalAlignment="Top" Height="62" Width="99" Name="GettingStartedText">
+                    <TextBlock Text="Click here to enter your first Fill Up!" TextWrapping="Wrap" Width="89" Height="47" />
+                </Label>
                 <Button x:Name="NewFillUp"  Width="107" Click="NewFillUp_Click" Content="New Fill Up" />
                 <Label Content="Odometer" HorizontalAlignment="Center" Height="28" x:Name="OdometerLabel" />
                 <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Odometer" Margin="160,0" />

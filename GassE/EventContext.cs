@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-using Gass_E;
-using Gass_E.Model;
+using GassE;
+using GassE.Model;
 
-namespace Gass_E
+namespace GassE
 {
     public class EventContext : DbContext
     {

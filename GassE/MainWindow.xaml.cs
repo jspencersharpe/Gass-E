@@ -1,10 +1,10 @@
 ﻿using System.Windows;
-using Gass_E.Repository;
-using Gass_E.Model;
+using GassE.Repository;
+using GassE.Model;
 using System;
 using System.Data.Entity;
 
-namespace Gass_E
+namespace GassE
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
