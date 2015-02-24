@@ -81,7 +81,6 @@
     <Compile Include="TestHelper.cs" />
     <Compile Include="EventTestModel.cs" />
     <Compile Include="AddingFillUpTest.cs" />
-    <Compile Include="StoryTests.cs" />
     <Compile Include="EventRepositoryTest.cs" />
     <Compile Include="ViewingListTest.cs" />
   </ItemGroup>
