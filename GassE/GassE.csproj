@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201502251723416_Decimal.Designer.cs">
       <DependentUpon>201502251723416_Decimal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502251945351_Date.cs" />
+    <Compile Include="Migrations\201502251945351_Date.Designer.cs">
+      <DependentUpon>201502251945351_Date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\EventRepository.cs" />
     <Compile Include="Repository\IEventRepository.cs" />
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502251723416_Decimal.resx">
       <DependentUpon>201502251723416_Decimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502251945351_Date.resx">
+      <DependentUpon>201502251945351_Date.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

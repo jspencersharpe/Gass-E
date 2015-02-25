@@ -98,15 +98,15 @@ namespace UnitTestGassE
             textBox.SetValue(odo);
         }
 
-        public void WhenIEnterGallons(int gall) 
+        public void WhenIEnterGallons(decimal gall) 
         {
             var textBox = window.Get<TextBox>("Gallons");
             textBox.SetValue(gall);
         }
 
-        public void WhenIEnterCostOfFillUp(int cost) 
+        public void WhenIEnterCostOfFillUp(decimal cost) 
         {
-            var textBox = window.Get<TextBox>("CostOfFillUp");
+            var textBox = window.Get<TextBox>("Cost of FillUp");
             textBox.SetValue(cost);
         }
 
