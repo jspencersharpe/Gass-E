@@ -71,7 +71,7 @@ namespace UnitTestGassE
             Assert.IsFalse(button.Enabled);
         }
 
-        public void AndIShouldSeeAListFor(int p1, int p2, int p3, string p4)
+        public void AndIShouldSeeAListFor(int p1, decimal p2, decimal  p3, string p4)
         {
             var e = repo.GetByDate(p4);
             Assert.IsNotNull(window);
@@ -138,7 +138,7 @@ namespace UnitTestGassE
 
         public void WhenIClick(string buttonContent) 
         {
-            Button button = window.Get<Button>(SearchCriteria.ByAutomationId(buttonContent));
+            Button button = window.Get<Button>(SearchCriteria.ByText(buttonContent));
             button.Click();
         }
 

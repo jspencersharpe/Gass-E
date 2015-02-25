@@ -12,8 +12,8 @@ namespace GassE.Model
     {
         public int EventId { get; set; }
         public int Odometer { get; set; }
-        public int Gallons { get; set; }
-        public int CostofFillUp { get; set; }
+        public decimal Gallons { get; set; }
+        public decimal CostofFillUp { get; set; }
         public string Date { get; set; }
 
         public Event() 
@@ -21,7 +21,7 @@ namespace GassE.Model
             //placeholder
         }
 
-        public Event(int EventOdometer, int EventGallons, int EventCostofFillUp, string EventDate) 
+        public Event(int EventOdometer, decimal EventGallons, decimal EventCostofFillUp, string EventDate) 
         {
             this.Odometer = EventOdometer;
             this.Gallons = EventGallons;

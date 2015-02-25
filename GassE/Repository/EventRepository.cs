@@ -37,16 +37,16 @@ namespace GassE.Repository
 
         public void Add(Model.Event E) 
         {
-            var query = from Event in _dbContext.Events
-                        where Event.Odometer == E.Odometer &&
-                        Event.CostofFillUp == E.CostofFillUp &&
-                        Event.Date == E.Date
-                        select Event;
+            //var query = from Event in _dbContext.Events
+            //            where Event.Odometer == E.Odometer &&
+            //            Event.CostofFillUp == E.CostofFillUp &&
+            //            Event.Date == E.Date
+            //            select Event;
 
-            if (query.ToList().Count > 0)
-            {
-                throw new ArgumentException();
-            }
+            //if (query.ToList().Count > 0) 
+            //{
+            //    throw new ArgumentException();
+            //}
 
             _dbContext.Events.Add(E);
             _dbContext.SaveChanges();
@@ -97,7 +97,7 @@ namespace GassE.Repository
             return query.First<Model.Event>();
         }
 
-        public Model.Event GetByGallons(int gall) 
+        public Model.Event GetByGallons(decimal gall) 
         {
             var query = from Event in _dbContext.Events
                         where Event.Gallons == gall
@@ -105,7 +105,7 @@ namespace GassE.Repository
             return query.First<Model.Event>();
         }
 
-        public Model.Event GetByCostOfFillUp(int cost) 
+        public Model.Event GetByCostOfFillUp(decimal cost) 
         {
             var query = from Event in _dbContext.Events
                         where Event.CostofFillUp == cost

@@ -13,8 +13,8 @@ namespace GassE.Migrations
                     {
                         EventId = c.Int(nullable: false, identity: true),
                         Odometer = c.Int(nullable: false),
-                        Gallons = c.Int(nullable: false),
-                        CostofFillUp = c.Int(nullable: false),
+                        Gallons = c.Decimal(nullable: false),
+                        CostofFillUp = c.Decimal(nullable: false),
                         Date = c.String(),
                     })
                 .PrimaryKey(t => t.EventId);

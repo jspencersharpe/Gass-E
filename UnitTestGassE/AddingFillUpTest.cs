@@ -29,11 +29,11 @@ namespace UnitTestGassE
         public void ScenarioEventCreation()
         {
             GivenThereAreNoEvents();
-            WhenIClick("NewFillUp");
+            WhenIClick("New Fill Up");
             ThenIShouldSeeTheEventForm();
             AndIShouldNotSeeTheHelperText();
             AndTheEventDateShouldBeToday();
-            AndTheButtonShouldBeDisabled("NewFillUp");
+            AndTheButtonShouldBeDisabled("New Fill Up");
             WhenIFillInOdometerWith(200000);
             WhenIEnterGallons(10);
             WhenIEnterCostOfFillUp(50);
@@ -50,7 +50,7 @@ namespace UnitTestGassE
         public void ScenarioDataValidationForEventCreation()
         {
             GivenThereAreNoEvents();
-            WhenIClick("NewFillUp");
+            WhenIClick("New Fill Up");
             AndIClick("Submit");
             ThenIShouldSeeTheEventForm();
             AndIShouldSeeAnErrorMessage("All parameters must be filled in");
@@ -68,14 +68,14 @@ namespace UnitTestGassE
         public void ScenarioResettingEventCreation()
         {
             GivenThereAreNoEvents();
-            WhenIClick("NewFillUp");
+            WhenIClick("New Fill Up");
             WhenIFillInOdometerWith(200000);
             WhenIEnterGallons(10);
             AndIChooseTheEventDate(new DateTime(2015, 10, 01));
             AndIClick("Reset");
             AndIShouldSeeXEvents(0);
             AndIShouldSeeTheHelperText();
-            AndTheButtonShouldBeDisabled("NewFillUp");
+            AndTheButtonShouldBeDisabled("New Fill Up");
 
         }
 

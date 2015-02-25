@@ -3,6 +3,7 @@ using GassE.Repository;
 using GassE.Model;
 using System;
 using System.Data.Entity;
+using System.Text.RegularExpressions;
 
 namespace GassE
 {
@@ -24,9 +25,10 @@ namespace GassE
         private void NewFillUp_Click(object sender, RoutedEventArgs e) 
         {
             repo = new EventRepository();
+            
             int odometer = Convert.ToInt32(Odometer.Text);
-            int gall = Convert.ToInt32(Gallons.Text);
-            int cost = Convert.ToInt32(CostofFillUp.Text);
+            decimal gall = Convert.ToDecimal(Gallons.Text);
+            decimal cost = Convert.ToDecimal(CostofFillUp.Text);
             string date = Date.Text;
             repo.Add(new Event(odometer, gall, cost, date));
             Odometer.Text = "";
@@ -34,5 +36,7 @@ namespace GassE
             CostofFillUp.Text = "";
             Date.Text = "";
         }
+
+        
     }
 }
