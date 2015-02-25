@@ -4,7 +4,7 @@
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
         <StackPanel>
-            <StackPanel>
+            <StackPanel Name="NewEventForm">
                 <Label HorizontalAlignment="Left" Margin="306,209,0,0" VerticalAlignment="Top" Height="62" Width="99" Name="GettingStartedText">
                     <TextBlock Text="Click here to enter your first Fill Up!" TextWrapping="Wrap" Width="89" Height="47" />
                 </Label>
@@ -16,8 +16,8 @@
                 <Label Content="Cost of Fill Up" HorizontalAlignment="Center" x:Name="CostofFillUpLabel"></Label>
                 <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="CostofFillUp" Margin="160,0" />
                 <Label Content="Date" HorizontalAlignment="Center" x:Name="DateLabel"></Label>
-                <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Date"></TextBox>
-                <Button Name="Submit" Width="100" Height="20" Content="Submit" Margin="10"></Button>
+                <DatePicker Name="EventDate" Margin="5"></DatePicker>
+                <Button Name="Submit" Width="100" Height="20" Click="Submit_Click" Content="Submit" Margin="10"></Button>
 
             </StackPanel>
             <Button x:Name="Reset" Width="100" Height= "20" Content="Reset"/>

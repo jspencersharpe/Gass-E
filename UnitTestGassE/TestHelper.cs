@@ -112,13 +112,16 @@ namespace UnitTestGassE
 
         public void AndIChooseTheEventDate(DateTime newDate) 
         {
-            DateTimePicker picker = window.Get<DateTimePicker>(SearchCriteria.ByAutomationId("Date"));
+            DateTimePicker picker = window.Get<DateTimePicker>(SearchCriteria.ByAutomationId("EventDate"));
             picker.SetValue(newDate);
+            DateTime? actual = picker.Date;
+            DateTime expected = DateTime.Today;
+            Assert.AreEqual(expected, actual);
         }
 
         public void AndTheEventDateShouldBeToday() 
         {
-            DateTimePicker picker = window.Get<DateTimePicker>(SearchCriteria.ByAutomationId("Date"));
+            DateTimePicker picker = window.Get<DateTimePicker>(SearchCriteria.ByAutomationId("EventDate"));
             DateTime? actual = picker.Date;
             DateTime expected = DateTime.Today;
             Assert.AreEqual(expected, actual);

@@ -17,24 +17,39 @@ namespace GassE
         public MainWindow()
         {
             InitializeComponent();
-            //NewFillUp.DataContext = repo.Context().Events.Local;
-            //NewFillUp.DataContext = repo.Context();
-            FillUpList.DataContext = repo.GetCount();
+            NewFillUp.DataContext = repo.Context().Events.Local;
+            //FillUpList.DataContext = repo.GetCount();
+            if (repo.GetCount() > 1) 
+            {
+                HideHelpMessages();
+            }
+        }
+
+        private void HideHelpMessages() 
+        {
+            GettingStartedText.Visibility = Visibility.Hidden;
         }
 
         private void NewFillUp_Click(object sender, RoutedEventArgs e) 
         {
+            NewEventForm.Visibility = Visibility.Visible;
+            EventDate.SelectedDate = DateTime.Today;
+            HideHelpMessages();
+        }
+
+        private void Submit_Click(object sender, RoutedEventArgs e)
+        {
             repo = new EventRepository();
-            
-            int odometer = Convert.ToInt32(Odometer.Text);
+            string odometer = Odometer.Text;
+            int odo = Int32.Parse(odometer);
             decimal gall = Convert.ToDecimal(Gallons.Text);
             decimal cost = Convert.ToDecimal(CostofFillUp.Text);
-            string date = Date.Text;
-            repo.Add(new Event(odometer, gall, cost, date));
+            string date = EventDate.SelectedDate.ToString();
+            repo.Add(new Event(odo, gall, cost, date));
             Odometer.Text = "";
             Gallons.Text = "";
             CostofFillUp.Text = "";
-            Date.Text = "";
+            EventDate.Text = "";
         }
 
         
