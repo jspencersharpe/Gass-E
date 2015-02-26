@@ -8,7 +8,7 @@
                 <Label HorizontalAlignment="Left" Margin="306,209,0,0" VerticalAlignment="Top" Height="62" Width="99" Name="GettingStartedText">
                     <TextBlock Text="Click here to enter your first Fill Up!" TextWrapping="Wrap" Width="89" Height="47" />
                 </Label>
-                <Button x:Name="NewFillUp"  Width="107" Click="NewFillUp_Click" Content="New Fill Up" />
+                <Button x:Name="NewFillUp"  Width="107" Click="NewFillUp_Click" Content="New" />
                 <Label Content="Odometer" HorizontalAlignment="Center" Height="28" x:Name="OdometerLabel" />
                 <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Odometer" Margin="160,0" />
                 <Label Content="Gallons" HorizontalAlignment="Center" x:Name="GallonsLabel"></Label>

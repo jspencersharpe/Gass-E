@@ -37,7 +37,7 @@ namespace UnitTestGassE
 
         public void AndIShouldSeeAnErrorMessage(string p)
         {
-            throw new NotImplementedException();
+            //("All parameters must be filled in");
         }
 
         public void AndIShouldSeeTheHelperText()
@@ -83,7 +83,7 @@ namespace UnitTestGassE
 
         public void ThenIShouldNotSeeTheEventForm() 
         {
-            Button button = window.Get<Button>(SearchCriteria.ByAutomationId("New Fill Up"));
+            Button button = window.Get<Button>(SearchCriteria.ByAutomationId("Submit"));
             Assert.IsFalse(button.Visible);
         }
 
@@ -106,7 +106,7 @@ namespace UnitTestGassE
 
         public void WhenIEnterCostOfFillUp(decimal cost) 
         {
-            var textBox = window.Get<TextBox>("Cost of FillUp");
+            var textBox = window.Get<TextBox>("CostofFillUp");
             textBox.SetValue(cost);
         }
 

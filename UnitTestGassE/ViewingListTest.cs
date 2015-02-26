@@ -36,9 +36,7 @@ namespace UnitTestGassE
             AndIShouldSeeAListFor(200000, 10, 50, "4/1/15");
             AndIShouldSeeAListFor(100000, 10, 40, "2/15/15");
             AndIShouldNotSeeTheHelperText();
-            AndTheButtonShouldBeEnabled("NewFillUp");
+            AndTheButtonShouldBeEnabled("New");
         }
-
-
     }
 }

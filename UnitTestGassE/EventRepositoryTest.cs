@@ -69,10 +69,9 @@ namespace UnitTestGassE
         [ExpectedException(typeof(ArgumentException))]
         public void EventsAreUnique() 
         {
-            Event e = new Event(100000, 10, 30, "4/1/2015");
             repo.Clear();
-            repo.Add(e);
-            repo.Add(e);
+            repo.Add(new Event(100000, 10, 30, "4/1/2015"));
+            repo.Add(new Event(100000, 10, 30, "4/1/2015"));            
             
         }
     }
