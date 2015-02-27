@@ -15,6 +15,7 @@ namespace GassE.Model
         public decimal Gallons { get; set; }
         public decimal CostofFillUp { get; set; }
         public string Date { get; set; }
+        public decimal MPG { get; set; }
 
         public Event() 
         { 
