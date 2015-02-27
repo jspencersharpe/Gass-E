@@ -55,6 +55,11 @@ namespace GassE
             EventDate.Text = "";
         }
 
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         
     }
 }

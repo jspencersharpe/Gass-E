@@ -70,9 +70,40 @@ namespace GassE.Repository
             throw new NotImplementedException();
         }
 
-        public int CalculateAverage(Model.Event E) 
+        public Model.Event FindMostRecent()
         {
-            throw new NotImplementedException();
+            var mostRecent = from Event in _dbContext.Events
+                             select Event;
+            return mostRecent.OrderByDescending
+                (u => u.EventId).FirstOrDefault<Model.Event>();
+        }
+
+        public Model.Event FindTimeBefore()
+        {
+            var timeBefore = from Event in _dbContext.Events
+                             select Event;
+
+            return timeBefore.OrderByDescending
+                (u => u.EventId).Skip(1).First<Model.Event>();
+        }
+
+        public Model.Event MostRecentGallons(decimal gall)
+        {
+            var gallons = from Event in _dbContext.Events
+                          where Event.Gallons == gall
+                          select Event;
+
+            return gallons.OrderByDescending
+                (s => s.EventId).First<Model.Event>();
+        }
+
+        public decimal CalculateAverage() 
+        {
+            Event mostRecent = FindMostRecent();
+            Event timeBefore = FindTimeBefore();
+            int difference = mostRecent.Odometer - timeBefore.Odometer;
+
+            return difference / mostRecent.Gallons;
         }
 
         public IEnumerable<Model.Event> All()

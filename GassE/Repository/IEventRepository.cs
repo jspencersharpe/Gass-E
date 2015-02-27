@@ -15,7 +15,7 @@ namespace GassE.Repository
         void Delete(Event E);
         void Clear();
         IEnumerable<Event> PastEvents();
-        int CalculateAverage(Event E);
+        decimal CalculateAverage();
         IEnumerable<Event> All();
         Event GetById(int id);
         Event GetByOdometer(int odo);
