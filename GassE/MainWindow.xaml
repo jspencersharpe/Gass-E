@@ -25,7 +25,13 @@
         <ListBox Height="60" Width="300" Name="FillUpList" ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBox Text="{Binding Name}"></TextBox>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Odometer}" Margin="5"></Label>
+                        <Label Content="{Binding Gallons}" Margin="5"></Label>
+                        <Label Content="{Binding CostFillUp}" Margin="5"></Label>
+                        <Label Content="{Binding Date}" Margin="5"></Label>
+                    </StackPanel>
+                    
                 </DataTemplate>
             </ListBox.ItemTemplate>
             

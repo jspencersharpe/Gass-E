@@ -12,11 +12,12 @@ namespace GassE
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static EventRepository repo = new EventRepository();
+        public static EventRepository repo;
 
         public MainWindow()
         {
             InitializeComponent();
+            repo = new EventRepository();
             FillUpList.DataContext = repo.Context().Events.Local;
             //FillUpList.DataContext = repo.GetCount();
             if (repo.GetCount() > 1) 
@@ -42,16 +43,16 @@ namespace GassE
         {
             NewEventForm.Visibility = Visibility.Collapsed;
             repo = new EventRepository();
-            string odometer = Odometer.Text;
-            int odo = Int32.Parse(odometer);
+            int odometer = Int32.Parse(Odometer.Text);
             decimal gall = Convert.ToDecimal(Gallons.Text);
             decimal cost = Convert.ToDecimal(CostofFillUp.Text);
             string date = EventDate.SelectedDate.ToString();
-            repo.Add(new Event(odo, gall, cost, date));
-            //Odometer.Text = "";
-            //Gallons.Text = "";
-            //CostofFillUp.Text = "";
-            //EventDate.Text = "";
+            repo.Add(new Event(odometer, gall, cost, date));
+            FillUpList.DataContext = repo.All();
+            Odometer.Text = "";
+            Gallons.Text = "";
+            CostofFillUp.Text = "";
+            EventDate.Text = "";
         }
 
         
