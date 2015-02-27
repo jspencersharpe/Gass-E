@@ -70,17 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\201502242113482_AddHashField.cs" />
-    <Compile Include="Migrations\201502242113482_AddHashField.Designer.cs">
-      <DependentUpon>201502242113482_AddHashField.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502251723416_Decimal.cs" />
-    <Compile Include="Migrations\201502251723416_Decimal.Designer.cs">
-      <DependentUpon>201502251723416_Decimal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502251945351_Date.cs" />
-    <Compile Include="Migrations\201502251945351_Date.Designer.cs">
-      <DependentUpon>201502251945351_Date.cs</DependentUpon>
+    <Compile Include="Migrations\201502272133003_MPG.cs" />
+    <Compile Include="Migrations\201502272133003_MPG.Designer.cs">
+      <DependentUpon>201502272133003_MPG.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\EventRepository.cs" />
@@ -114,14 +106,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201502242113482_AddHashField.resx">
-      <DependentUpon>201502242113482_AddHashField.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502251723416_Decimal.resx">
-      <DependentUpon>201502251723416_Decimal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502251945351_Date.resx">
-      <DependentUpon>201502251945351_Date.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201502272133003_MPG.resx">
+      <DependentUpon>201502272133003_MPG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

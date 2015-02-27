@@ -27,6 +27,7 @@ namespace GassE.Model
             this.Gallons = EventGallons;
             this.CostofFillUp = EventCostofFillUp;
             this.Date = EventDate;
+ 
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
