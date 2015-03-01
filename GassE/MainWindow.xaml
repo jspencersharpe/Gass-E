@@ -22,21 +22,24 @@
             </StackPanel>
             <Button x:Name="Reset" Width="100" Height= "20" Content="Reset"/>
         </StackPanel>
-        <ListBox Height="250" Width="400" Name="FillUpList" ItemsSource="{Binding}">
+        <ListBox Height="250" Width="450" Name="FillUpList" ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="{Binding Odometer}" Margin="5"></Label>
-                        <Label Content="{Binding Gallons}" Margin="5"></Label>
-                        <Label Content="{Binding CostFillUp}" Margin="5"></Label>
-                        <Label Content="{Binding Date}" Margin="5"></Label>
+                        <Label Content="{Binding Odometer, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"></Label>
+                        <Label Content="{Binding Gallons, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"></Label>
+                        <Label Content="{Binding CostFillUp, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"></Label>
+                        <Label Content="{Binding Date, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"></Label>
                         <Button Name="Delete" Width="30" Height="20" Click="Delete_Click" Content="Delete"></Button>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-            
+            <StackPanel>
+                <Label></Label>
+                <TextBlock x:Name="CalculateAverage" Text="{Binding}"></TextBlock>
+
+            </StackPanel>
+                       
         </ListBox>
     </StackPanel>
-
-
 </Window>

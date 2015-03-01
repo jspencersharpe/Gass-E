@@ -15,8 +15,6 @@ namespace GassE.Model
         public decimal Gallons { get; set; }
         public decimal CostofFillUp { get; set; }
         public string Date { get; set; }
-        public decimal MPG { get; set; }
-
         public Event() 
         { 
             //placeholder
@@ -27,8 +25,7 @@ namespace GassE.Model
             this.Odometer = EventOdometer;
             this.Gallons = EventGallons;
             this.CostofFillUp = EventCostofFillUp;
-            this.Date = EventDate;
- 
+            this.Date = EventDate; 
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

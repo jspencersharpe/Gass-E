@@ -32,27 +32,16 @@ namespace GassE.Repository
 
         public int GetCount() 
         {
-            return _dbContext.Events.Count<Model.Event>();
+            return _dbContext.Events.Count<Event>();
         }
 
-        public void Add(Model.Event E) 
+        public void Add(Event E) 
         {
-            //var query = from Event in _dbContext.Events
-            //            where Event.Odometer == E.Odometer &&
-            //            Event.CostofFillUp == E.CostofFillUp &&
-            //            Event.Date == E.Date
-            //            select Event;
-
-            //if (query.ToList().Count > 0) 
-            //{
-            //    throw new ArgumentException();
-            //}
-
             _dbContext.Events.Add(E);
             _dbContext.SaveChanges();
         }
 
-        public void Delete(Model.Event E) 
+        public void Delete(Event E) 
         {
             _dbContext.Events.Remove(E);
             _dbContext.SaveChanges();

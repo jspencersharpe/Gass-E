@@ -3,7 +3,11 @@ using GassE.Repository;
 using GassE.Model;
 using System;
 using System.Data.Entity;
+using System.Collections.Generic;
+using System.Windows.Data;
 using System.Text.RegularExpressions;
+using System.Collections.ObjectModel;
+using GassE;
 
 namespace GassE
 {
@@ -12,6 +16,7 @@ namespace GassE
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static EventContext _dbContext;
         public static EventRepository repo;
 
         public MainWindow()
@@ -19,8 +24,8 @@ namespace GassE
             InitializeComponent();
             repo = new EventRepository();
             FillUpList.DataContext = repo.Context().Events.Local;
-            //FillUpList.DataContext = repo.GetCount();
-            if (repo.GetCount() > 1) 
+            CalculateAverage.DataContext = repo.CalculateAverage();
+            if (repo.GetCount() >= 1) 
             {
                 HideHelpMessages();
             }
@@ -49,6 +54,7 @@ namespace GassE
             string date = EventDate.SelectedDate.ToString();
             repo.Add(new Event(odometer, gall, cost, date));
             FillUpList.DataContext = repo.All();
+            CalculateAverage.DataContext = repo.CalculateAverage();
             Odometer.Text = "";
             Gallons.Text = "";
             CostofFillUp.Text = "";

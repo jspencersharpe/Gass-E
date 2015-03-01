@@ -70,9 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\201502272152434_GasEvents.cs" />
-    <Compile Include="Migrations\201502272152434_GasEvents.Designer.cs">
-      <DependentUpon>201502272152434_GasEvents.cs</DependentUpon>
+    <Compile Include="Migrations\201503012315503_App.cs" />
+    <Compile Include="Migrations\201503012315503_App.Designer.cs">
+      <DependentUpon>201503012315503_App.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\EventRepository.cs" />
@@ -106,8 +106,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201502272152434_GasEvents.resx">
-      <DependentUpon>201502272152434_GasEvents.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503012315503_App.resx">
+      <DependentUpon>201503012315503_App.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
