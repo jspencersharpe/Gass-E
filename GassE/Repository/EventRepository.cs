@@ -61,6 +61,9 @@ namespace GassE.Repository
 
         public Model.Event FindMostRecent()
         {
+            //Event filler = new Event(200000, 10, 50, "10/1/2015");
+            //_dbContext.Events.Add(filler);
+            //_dbContext.SaveChanges();
             var mostRecent = from Event in _dbContext.Events
                              select Event;
             return mostRecent.OrderByDescending
