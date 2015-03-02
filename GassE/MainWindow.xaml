@@ -19,7 +19,6 @@
                 <DatePicker Width="200" Name="EventDate" Margin="5"></DatePicker>
                 <Button Name="Submit" Width="100" Height="20" Click="Submit_Click" Content="Submit" Margin="10"></Button>
             </StackPanel>
-            <Button x:Name="Reset" Width="100" Height= "20" Content="Reset" Click="Reset_Click"></Button>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
             <Label Content="Odometer" Margin="0, 0, 45, 0"></Label>
@@ -31,9 +30,9 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>                        
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Odometer, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 45, 0"></TextBlock>
-                        <TextBlock Text="{Binding Gallons, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 45, 0"></TextBlock>
-                        <TextBlock Text="{Binding CostofFillUp, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 45, 0"></TextBlock>
+                        <TextBlock Text="{Binding Odometer, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 90, 0"></TextBlock>
+                        <TextBlock Text="{Binding Gallons, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 90, 0"></TextBlock>
+                        <TextBlock Text="{Binding CostofFillUp, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 90, 0"></TextBlock>
                         <TextBlock Text="{Binding Date, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                         <Button Name="Delete" Width="30" Height="20" Click="Delete_Click" Content="Delete"></Button>
                     </StackPanel>
@@ -42,7 +41,10 @@
         </ListBox>  
            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                <Label FontSize="40"  Content="MPG:"></Label>
-               <TextBlock FontSize="40" Name="MPG" Text="{Binding}"></TextBlock>
-           </StackPanel>
+            <TextBlock FontSize="40" Name="MPG" Text="{Binding}"></TextBlock>
+       </StackPanel>
+        <StackPanel Margin="20">
+            <Button x:Name="Reset" Width="100" Height= "20" Content="Reset" Click="Reset_Click"></Button>
+        </StackPanel>
     </StackPanel>
 </Window>

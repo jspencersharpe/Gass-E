@@ -64,6 +64,9 @@ namespace GassE.Repository
             //Event filler = new Event(200000, 10, 50, "10/1/2015");
             //_dbContext.Events.Add(filler);
             //_dbContext.SaveChanges();
+            Event filler = new Event(100, 10, 50, "03/1/2015");
+            _dbContext.Events.Add(filler);
+            _dbContext.SaveChanges();
             var mostRecent = from Event in _dbContext.Events
                              select Event;
             return mostRecent.OrderByDescending
@@ -72,6 +75,9 @@ namespace GassE.Repository
 
         public Model.Event FindTimeBefore()
         {
+            //Event filler = new Event(10, 1, 1, "2/1/2015");
+            //_dbContext.Events.Add(filler);
+            //_dbContext.SaveChanges();
             var timeBefore = from Event in _dbContext.Events
                              select Event;
 
@@ -103,7 +109,12 @@ namespace GassE.Repository
             int difference = mostRecent.Odometer - timeBefore.Odometer;
             decimal avg = difference / mostRecent.Gallons;
 
+            if (avg < 0)
+            {
+               avg = avg * (-1);
+            }
             return Math.Round(avg, 2);
+
         }
 
         public Model.Event GetById(int id) 
