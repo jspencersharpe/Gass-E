@@ -10,11 +10,11 @@
                 </Label>
                 <Button x:Name="NewFillUp"  Width="107" Click="NewFillUp_Click" Content="New" />
                 <Label Content="Odometer" HorizontalAlignment="Center" Height="28" x:Name="OdometerLabel" />
-                <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Odometer" Margin="160,0" />
+                <TextBox Width="180" Height="20" IsReadOnly="False" x:Name="Odometer" Margin="160,0" />
                 <Label Content="Gallons" HorizontalAlignment="Center" x:Name="GallonsLabel"></Label>
-                <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="Gallons" Margin="160,0"></TextBox>
+                <TextBox Width="180" Height="20" IsReadOnly="False" x:Name="Gallons" Margin="160,0"></TextBox>
                 <Label Content="Cost of Fill Up" HorizontalAlignment="Center" x:Name="CostofFillUpLabel"></Label>
-                <TextBox Width="200" Height="20" IsReadOnly="False" x:Name="CostofFillUp" Margin="160,0" />
+                <TextBox Width="180" Height="20" IsReadOnly="False" x:Name="CostofFillUp" Margin="160,0" />
                 <Label Content="Date" HorizontalAlignment="Center" x:Name="DateLabel"></Label>
                 <DatePicker Width="200" Name="EventDate" Margin="5"></DatePicker>
                 <Button Name="Submit" Width="100" Height="20" Click="Submit_Click" Content="Submit" Margin="10"></Button>
@@ -22,19 +22,19 @@
             <Button x:Name="Reset" Width="100" Height= "20" Content="Reset" Click="Reset_Click"></Button>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-            <Label Content="Odometer"></Label>
-            <Label Content="Gallons"></Label>
-            <Label Content="Cost of FillUp"></Label>
-            <Label Content="Date"></Label>
+            <Label Content="Odometer" Margin="0, 0, 45, 0"></Label>
+            <Label Content="Gallons" Margin="0, 0, 45, 0"></Label>
+            <Label Content="Cost of FillUp" Margin="0, 0, 45, 0"></Label>
+            <Label Content="Date" Margin="0, 0, 45, 0"></Label>
         </StackPanel>
         <ListBox Height="200" Width="450" Name="FillUpList" ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
                 <DataTemplate>                        
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Odometer, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBlock>
-                        <TextBlock Text="{Binding Gallons, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBlock>
-                        <TextBlock Text="{Binding CostFillUp, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBlock>
-                        <TextBlock Text="{Binding Date, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBlock>
+                        <TextBlock Text="{Binding Odometer, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 45, 0"></TextBlock>
+                        <TextBlock Text="{Binding Gallons, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 45, 0"></TextBlock>
+                        <TextBlock Text="{Binding CostofFillUp, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Margin="0, 0, 45, 0"></TextBlock>
+                        <TextBlock Text="{Binding Date, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                         <Button Name="Delete" Width="30" Height="20" Click="Delete_Click" Content="Delete"></Button>
                     </StackPanel>
                  </DataTemplate>

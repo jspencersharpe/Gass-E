@@ -101,8 +101,9 @@ namespace GassE.Repository
             Event mostRecent = FindMostRecent();
             Event timeBefore = FindTimeBefore();
             int difference = mostRecent.Odometer - timeBefore.Odometer;
+            decimal avg = difference / mostRecent.Gallons;
 
-            return difference / mostRecent.Gallons;
+            return Math.Round(avg, 2);
         }
 
         public Model.Event GetById(int id) 
