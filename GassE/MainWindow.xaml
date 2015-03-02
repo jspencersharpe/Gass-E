@@ -20,7 +20,7 @@
                 <Button Name="Submit" Width="100" Height="20" Click="Submit_Click" Content="Submit" Margin="10"></Button>
 
             </StackPanel>
-            <Button x:Name="Reset" Width="100" Height= "20" Content="Reset"/>
+            <Button x:Name="Reset" Width="100" Height= "20" Content="Reset" Click="Reset_Click"></Button>
         </StackPanel>
         <ListBox Height="250" Width="450" Name="FillUpList" ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
@@ -34,12 +34,16 @@
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-            <StackPanel>
-                <Label></Label>
-                <TextBlock x:Name="CalculateAverage" Text="{Binding}"></TextBlock>
-
-            </StackPanel>
-                       
+                
+        </ListBox>  
+        <ListBox Height="200" Name="CalculateAverage" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Name="CalculateAverage" Content="{Binding}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
     </StackPanel>
 </Window>

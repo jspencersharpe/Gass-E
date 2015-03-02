@@ -61,6 +61,9 @@ namespace GassE.Repository
 
         public Model.Event FindMostRecent()
         {
+            Event filler = new Event(200000, 10, 50, "10/1/2015");
+            _dbContext.Events.Add(filler);
+            _dbContext.SaveChanges();
             var mostRecent = from Event in _dbContext.Events
                              select Event;
             return mostRecent.OrderByDescending
@@ -69,15 +72,21 @@ namespace GassE.Repository
 
         public Model.Event FindTimeBefore()
         {
+            Event filler = new Event(200000, 10, 50, "10/1/2015");
+            _dbContext.Events.Add(filler);
+            _dbContext.SaveChanges();
             var timeBefore = from Event in _dbContext.Events
                              select Event;
 
             return timeBefore.OrderByDescending
-                (u => u.EventId).Skip(1).First<Model.Event>();
+                (u => u.EventId).Skip(1).FirstOrDefault<Model.Event>();
         }
 
         public Model.Event MostRecentGallons(decimal gall)
         {
+            Event filler = new Event(200000, 10, 50, "10/1/2015");
+            _dbContext.Events.Add(filler);
+            _dbContext.SaveChanges();
             var gallons = from Event in _dbContext.Events
                           where Event.Gallons == gall
                           select Event;
@@ -86,19 +95,26 @@ namespace GassE.Repository
                 (s => s.EventId).First<Model.Event>();
         }
 
-        public decimal CalculateAverage() 
+        public IEnumerable<Model.Event> All()
+        {
+            var qu = from Event in _dbContext.Events select Event;
+            return qu.ToList<Model.Event>();
+        }
+
+        public decimal CalculateAverage()
         {
             Event mostRecent = FindMostRecent();
             Event timeBefore = FindTimeBefore();
             int difference = mostRecent.Odometer - timeBefore.Odometer;
 
-            return difference / mostRecent.Gallons;
-        }
-
-        public IEnumerable<Model.Event> All()
-        {
-            var qu = from Event in _dbContext.Events select Event;
-            return qu.ToList<Model.Event>();
+            if (difference >= 0)
+            {
+                return difference / mostRecent.Gallons;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public Model.Event GetById(int id) 

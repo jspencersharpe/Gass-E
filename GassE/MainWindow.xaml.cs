@@ -63,7 +63,15 @@ namespace GassE
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (Odometer != null)
+            {
+                this.Odometer.Clear();
+            }
+        }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            repo.Clear();
         }
 
         
