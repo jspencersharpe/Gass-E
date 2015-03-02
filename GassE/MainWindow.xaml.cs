@@ -24,7 +24,7 @@ namespace GassE
             InitializeComponent();
             repo = new EventRepository();
             FillUpList.DataContext = repo.Context().Events.Local;
-            CalculateAverage.DataContext = repo.CalculateAverage();
+            MPG.DataContext = repo.CalculateAverage();
             if (repo.GetCount() >= 1) 
             {
                 HideHelpMessages();
@@ -54,7 +54,7 @@ namespace GassE
             string date = EventDate.SelectedDate.ToString();
             repo.Add(new Event(odometer, gall, cost, date));
             FillUpList.DataContext = repo.All();
-            CalculateAverage.DataContext = repo.CalculateAverage();
+            MPG.DataContext = repo.CalculateAverage();
             Odometer.Text = "";
             Gallons.Text = "";
             CostofFillUp.Text = "";

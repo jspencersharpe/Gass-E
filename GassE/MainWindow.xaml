@@ -33,17 +33,10 @@
                         <Button Name="Delete" Width="30" Height="20" Click="Delete_Click" Content="Delete"></Button>
                     </StackPanel>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-                
+            </ListBox.ItemTemplate>          
         </ListBox>  
-        <ListBox Height="200" Name="CalculateAverage" ItemsSource="{Binding}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
                     <StackPanel>
-                        <Label Name="CalculateAverage" Content="{Binding}"></Label>
+                        <TextBlock Name="MPG" Text="{Binding}"></TextBlock>
                     </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
     </StackPanel>
 </Window>
