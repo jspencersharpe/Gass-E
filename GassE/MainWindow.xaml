@@ -5,9 +5,10 @@
     <StackPanel>
         <StackPanel>
             <StackPanel Name="NewEventForm">
-                <Label HorizontalAlignment="Left" Margin="306,10,0,0" VerticalAlignment="Top" Height="62" Width="99" Name="GettingStartedText">
+                <Label HorizontalAlignment="Left" Margin="306,5,0,0" VerticalAlignment="Top" Height="62" Width="99" Name="GettingStartedText">
                     <TextBlock Text="Click here to enter your first Fill Up!" TextWrapping="Wrap" Width="89" Height="47" />
                 </Label>
+                <Label Content="Gass-E" HorizontalAlignment="Center" FontSize="30"></Label>
                 <Button x:Name="NewFillUp"  Width="107" Click="NewFillUp_Click" Content="New" />
                 <Label Content="Odometer" HorizontalAlignment="Center" Height="28" x:Name="OdometerLabel" />
                 <TextBox Width="180" Height="20" IsReadOnly="False" x:Name="Odometer" Margin="160,0" />
@@ -26,7 +27,7 @@
             <Label Content="Cost of FillUp" Margin="0, 0, 45, 0"></Label>
             <Label Content="Date" Margin="0, 0, 45, 0"></Label>
         </StackPanel>
-        <ListBox Height="200" Width="450" Name="FillUpList" ItemsSource="{Binding}">
+        <ListBox Height="200" Width="475" Name="FillUpList" ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
                 <DataTemplate>                        
                     <StackPanel Orientation="Horizontal">
